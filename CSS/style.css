@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+*{
+    margin:       0;
+    padding:      0;
+    box-sizing:   border-box;
+}
+
+body{
+    display:              flex;
+    justify-content:      center;
+    align-items:          center;
+    min-height:           100vh;
+    background:         lightpink;
+}
+.clock { 
+    animation:           hours 3600s infinite;
+    width:               350px;
+    height:              350px;
+    display:             flex;
+    justify-content:     center;
+    align-items:         center;
+    background:          url(../img/clock.png);
+    background-size:     cover;
+    border:              10px solid lightpink;
+    border-radius:       50%;
+    box-shadow:          0 25px 15px rgba(255, 255, 255, 0.068),
+                         inset 0 25px 15px rgba(231, 222, 222, 0.05),
+                         0 25px 15px rgba(0, 0, 0, 0.3),
+                         inset 0 25px 15px rgba(0, 0, 0, 0.3);
+
+    
+}
+
+.clock:after { 
+    animation:          seconds 60s infinite steps(60); 
+    background-color: rgb(221, 119, 119);
+    left:               199px;
+    width:              4px; 
+  }
+  
+  .clock:before {
+    animation:          minutes 3600s infinite; 
+    background-color: rgb(250, 154, 154);
+    left:               196px;
+    width:              8px;
+  }
+
+.clock:before, .clock:after {
+    content:     '';
+    display:     block;
+    height:      250px;
+    position:    absolute;
+    top:         0;
+    margin-left: -30px;
+    top:         -10px;
+  }
+  
+
+  .clock:before, .clock:after {
+    content:              '';
+    display:              block;
+    height:               170px;
+    position:             absolute;
+    top:                  0;
+    transform-origin:     bottom;
+    border-radius:        100%;
+  }
+  
+  
+  
+  @keyframes seconds { 
+      0% {transform:   rotate(0deg);}
+      100% {transform: rotate(360deg);}
+  }
+  
+  @keyframes minutes { 
+      0% {transform:   rotate(0deg);}
+      100% {transform: rotate(360deg);}
+  }
+  
+  @keyframes hours { 
+      0% {transform:   rotate(0deg);}
+      100% {transform: rotate(360deg);}
+  }
+
+
+
+
